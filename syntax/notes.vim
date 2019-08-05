@@ -126,6 +126,12 @@ highlight def link notesFixMe WarningMsg
 highlight def link notesDoneItem Comment
 highlight def link notesDoneMarker Question
 highlight def link notesInProgress Directory
+" Added by AlexanderZeitler on 2019-08-05
+syntax match notesDeletedItem /^\(\s\+\).*\<\(DELETED\|DEL\|REMOVED\)\>.*\(\n\1\s.*\)*/ contains=@notesInline
+syntax match notesDeletedMarker /\<\(DELETED\|DEL\|REMOVED\)\>/ containedin=notesDeletedItem
+highlight def link notesDeletedItem Comment
+highlight def link notesDeletedMarker ErrorMsg
+
 
 " Highlight Vim command names in :this notation. {{{2
 syntax match notesVimCmd /\w\@<!:\w\+\(!\|\>\)/ contains=ALLBUT,@Spell
