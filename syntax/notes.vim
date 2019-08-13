@@ -118,7 +118,7 @@ syntax match notesTodo /\<TODO\>/
 syntax match notesXXX /\<XXX\>/
 syntax match notesFixMe /\<FIXME\>/
 syntax match notesInProgress /\<\(CURRENT\|INPROGRESS\|STARTED\|WIP\)\>/
-syntax match notesDoneItem /^\(\s\+\).*\<DONE\>.*\(\n\1\s.*\)*/ contains=@notesInline
+syntax match notesDoneItem /^\(\s\*\).*\<DONE\>.*\(\n\1\s.*\)*/ contains=@notesInline
 syntax match notesDoneMarker /\<DONE\>/ containedin=notesDoneItem
 highlight def link notesTodo WarningMsg
 highlight def link notesXXX WarningMsg
@@ -127,7 +127,7 @@ highlight def link notesDoneItem Comment
 highlight def link notesDoneMarker Question
 highlight def link notesInProgress Directory
 " Added by AlexanderZeitler on 2019-08-05
-syntax match notesDeletedItem /^\(\s\+\).*\<\(DELETED\|DEL\|REMOVED\)\>.*\(\n\1\s.*\)*/ contains=@notesInline
+syntax match notesDeletedItem /^\(\s\*\).*\<\(DELETED\|DEL\|REMOVED\)\>.*\(\n\1\s.*\)*/ contains=@notesInline
 syntax match notesDeletedMarker /\<\(DELETED\|DEL\|REMOVED\)\>/ containedin=notesDeletedItem
 highlight def link notesDeletedItem Comment
 highlight def link notesDeletedMarker ErrorMsg
