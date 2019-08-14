@@ -104,7 +104,8 @@ endif
 syntax match notesEmailAddr /\<\w[^@ \t\r]*\w@\w[^@ \t\r]\+\w\>/
 syntax cluster notesInline add=notesEmailAddr
 highlight def link notesEmailAddr notesSubtleURL
-syntax match notesUnixPath /\k\@<![\/~]\S\+\(\/\|[^ [:punct:]]\)/
+" syntax match notesUnixPath /\k\@<![\/~]\S\+\(\/\|[^ [:punct:]]\)/ " False: highlights e.g. ~~ and following word (used as markdown strike-through)
+syntax match notesUnixPath /\k\@<!\(\/\|\~\/\)\S\+\(\/\|[^ [:punct:]]\)/
 syntax cluster notesInline add=notesUnixPath
 highlight def link notesUnixPath Directory
 syntax match notesPathLnum /:\d\+/ contained containedin=notesUnixPath
